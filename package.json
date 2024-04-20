@@ -1,5 +1,5 @@
 {
-  "name": "react-animated-cursor",
+  "name": "react-animated-cursor-zht",
   "version": "2.11.1",
   "description": "An animated custom cursor component in React.",
   "author": "Stephen Scaff <stephenscaff.com>",
@@ -21,15 +21,12 @@
     "types": false
   },
   "scripts": {
-    "clean": "rm -rf ./dist",
     "build": "rollup -c",
     "dev": "parcel ./docs/src/index.html --dist-dir ./docs/dist",
-    "demo:clean": "rm -rf ./docs/dist",
+    "demo:clean": "del -f ./docs/dist",
     "demo:start": "parcel ./docs/src/index.html --dist-dir ./docs/dist",
     "demo:build": "parcel build ./docs/src/index.html --dist-dir ./docs/dist --public-url ./",
     "demo:deploy": "npm run demo:build && gh-pages -d ./docs/dist",
-    "prepare": "npm run build",
-    "prepublish": "rm -rf ./dist && npm run build",
     "lint": "eslint \"lib/**/*.+(ts|tsx)\" --fix ",
     "format": "prettier --write  \"lib/**/*.+(ts|tsx)\""
   },

@@ -61,7 +61,9 @@ function CursorCore({
   outerSize = 8,
   outerStyle,
   showSystemCursor = false,
-  trailingSpeed = 8
+  trailingSpeed = 8,
+  initialXCoord = 0,
+  initialYCoords = 0,
 }: AnimatedCursorProps) {
   const defaultOptions = useMemo(
     () => ({
@@ -93,10 +95,10 @@ function CursorCore({
   const requestRef = useRef<number | null>(null)
   const previousTimeRef = useRef<number | null>(null)
   const [coords, setCoords] = useState<AnimatedCursorCoordinates>({
-    x: 0,
-    y: 0
+    x: initialXCoord,
+    y: initialYCoords
   })
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const [options, setOptions] = useState(defaultOptions)
   const [isActive, setIsActive] = useState<boolean | AnimatedCursorOptions>(
     false
